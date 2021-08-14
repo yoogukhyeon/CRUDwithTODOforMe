@@ -1,0 +1,13 @@
+{
+  "name": "TodoProject",
+  "version": "1.0.0",
+  "description": "CRUDwithTodoforme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "yoogukhyeon",
+  "license": "ISC"
+}
