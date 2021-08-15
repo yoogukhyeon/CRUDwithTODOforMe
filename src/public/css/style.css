@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+.list-group-item {
+    position: relative
+}
+.btn-danger {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+

@@ -1,0 +1,66 @@
+<%- include('./partials/header') -%>
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Todo App</a>
+    </div>
+  </nav>
+<div class="container mt-5">
+    <form action="/add/todo" method="POST" class="" style="text-align: right;">
+        <input type="text" name="todo" id="todo" class="form-control" placeholder="Enter something to todo" required>
+
+        <textarea class="form-control my-2" placeholder="Leave a comment here" id="content" name="content" style="height: 100px" required></textarea>
+  
+        <input type="submit" value="Add Todo" class="btn  btn-info btn-primary mt-1">
+    </form>
+
+
+      <div class="list-group my-3">
+
+        <% todo.forEach(todos => { %>
+
+
+
+        <a href="javascript:void(0)" class="list-group-item list-group-item-action" aria-current="true">
+
+            
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1"><%= todos.todo %></h5>
+            <small><%= todos.createAt.toLocaleDateString() %></small>
+          </div>
+          <p class="mb-1"><%= todos.content %></p>
+          <small><%= todos._id %></small>
+
+
+
+          <form action="/delete/<%= todos.id %>?_method=DELETE" method="POST" style="text-align: right;">
+            <button type="submit" class="rounded-circle p-2 bg-danger" >
+                <i class="material-icons" style="color:white">Delete</i>
+            </button>
+         </form>
+
+
+        </a>
+     
+
+        <% }) %>
+
+      </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include('./partials/footer') -%>
