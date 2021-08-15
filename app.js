@@ -1,3 +1,9 @@
+//dotenv
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config({path:'.env'})
+}
+
+
 const express = require('express');
 const app = express();
 //bodyParser
@@ -6,7 +12,11 @@ const bodyParser = require('body-parser');
 const routes = require('./src/router/routes')
 //mongoose
 const mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost:27017/TodoDate" , {
+
+const ID = process.env.ID;
+const PW = process.env.PW;
+
+mongoose.connect(`mongodb+srv://${ID}:${PW}@cluster0.vqvky.mongodb.net/myFirstDatabase?retryWrites=true` , {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
