@@ -13,8 +13,8 @@ const routes = require('./src/router/routes')
 //mongoose
 const mongoose = require('mongoose');
 
-const ID = process.env.ID;
-const PW = process.env.PW;
+const ID = 'dkswoah589318'
+const PW = 'dkswoah589318'
 
 mongoose.connect(`mongodb+srv://${ID}:${PW}@cluster0.vqvky.mongodb.net/myFirstDatabase?retryWrites=true` , {
     useNewUrlParser: true,

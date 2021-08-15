@@ -7,7 +7,6 @@ const Todo = require('../model/TodoSchema')
 
 router.get('/' , async (req , res) => {
     const todo = await Todo.find().sort({"_id": -1})
-
     res.render('index' , {
         todo : todo,
     })
